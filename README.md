@@ -5,7 +5,7 @@ biekshare.py -  Mar 27th, 2021
 readme.txt   -  Mar 27th, 2021
 
 ### Project Title
-Explore US Bikeshare Data
+Explore Chicago, New York city and Washington Bikeshare Data
 
 ### Description
 Python code to import US bike share data and answer interesting questions about it by computing descriptive statistics.
