@@ -17,7 +17,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # get user input for city (chicago, new york city, washington).
     valid_city = ["Chicago", "New York City", "Washington"]
     city = ""
     while city not in valid_city:
@@ -50,16 +50,7 @@ def get_filters():
     return city.lower(), month, day
 
 def load_data(city, month, day):
-    """
-    Loads data for the specified city and filters by month and day if applicable.
 
-    Args:
-        (str) city - name of the city to analyze
-        (str) month - name of the month to filter by, or "all" to apply no month filter
-        (str) day - name of the day of week to filter by, or "all" to apply no day filter
-    Returns:
-        df - Pandas DataFrame containing city data filtered by month and day
-    """
 # load data file into a dataframe
     df = pd.read_csv(CITY_DATA[city])
 
@@ -96,12 +87,12 @@ def time_stats(df, month, day):
     if month == 'All':
         popular_month = df['month'].mode()[0]
         months = ['January', 'February', 'March', 'April', 'May', 'June']
-        print('Most Popular Month:', months[popular_month-1])
+        print('The most popular month is', months[popular_month-1])
 
     # display the most common day of week
     if day == 'All':
         popular_day = df['day_of_week'].mode()[0]
-        print('Most Popular day of the week: ', popular_day)
+        print('The most popular day of the week is ', popular_day)
 
     # display the most common start hour
     # convert the Start Time column to datetime
@@ -112,7 +103,7 @@ def time_stats(df, month, day):
 
     # find the most popular hour
     popular_hour = df['hour'].mode()[0]
-    print('Most Popular Start Hour:', popular_hour)
+    print('The most popular start hour is', popular_hour)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
